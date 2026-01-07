@@ -1,8 +1,5 @@
 steps:
 
-options:
-  logging: CLOUD_LOGGING_ONLY
-  # Build Docker image with root directory as build context
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
@@ -32,3 +29,7 @@ options:
 images:
   - 'gcr.io/$PROJECT_ID/bpmn-layout-server:$SHORT_SHA'
   - 'gcr.io/$PROJECT_ID/bpmn-layout-server:latest'
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
